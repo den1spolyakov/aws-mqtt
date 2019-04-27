@@ -40,8 +40,10 @@
     "ws": "^6.0.0"
   },
   "dependencies": {
-    "aws-signature-v4": "1.2.1",
-    "mqtt": "2.18.2"
+    "mqtt": "2.18.2",
+    "path-browserify": "1.0.0",
+    "querystring-es3": "0.2.1",
+    "react-native-crypto": "2.1.2"
   },
   "peerDependencies": {}
 }

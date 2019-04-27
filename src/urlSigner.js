@@ -1,5 +1,5 @@
-import v4 from 'aws-signature-v4'
-import crypto from 'crypto'
+import crypto from 'react-native-crypto';
+import v4 from './awsSignature';
 
 export const signedUrl = ({ credentials, endpoint, region, expires }) => {
   const payload = crypto
