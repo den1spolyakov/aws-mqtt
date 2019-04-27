@@ -15,7 +15,7 @@ export default (options = {}) => {
       clientId: options.clientId || 'mqtt-client-' + Math.floor(Math.random() * 100000 + 1),
       connectTimeout: options.connectTimeout || 5 * 1000,
       reconnectPeriod: options.reconnectPeriod || 10 * 1000,
-      clean: options.clean || true, // need to re-subscribe after offline/disconnect,
+      clean: options.clean, // need to re-subscribe after offline/disconnect,
       // enforce these options
       protocolId: 'MQTT', // AWS IoT supports MQTT v3.1.1
       protocolVersion: 4, // AWS IoT supports MQTT v3.1.1
