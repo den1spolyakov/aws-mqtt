@@ -1,4 +1,4 @@
-import crypto from 'react-native-crypto';
+import crypto from 'crypto-browserify';
 import v4 from './awsSignature';
 
 export const signedUrl = ({ credentials, endpoint, region, expires }) => {

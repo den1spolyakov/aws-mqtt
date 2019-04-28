@@ -4,7 +4,7 @@
 // sources of inspiration:
 // https://web-identity-federation-playground.s3.amazonaws.com/js/sigv4.js
 // http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html
-import crypto from 'react-native-crypto';
+import crypto from 'crypto-browserify';
 import querystring from 'querystring-es3';
 import path from 'path-browserify';
 
