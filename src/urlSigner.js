@@ -1,11 +1,8 @@
-import crypto from 'crypto-browserify';
+import AWS from 'aws-sdk/dist/aws-sdk-react-native';
 import v4 from './awsSignature';
 
 export const signedUrl = ({ credentials, endpoint, region, expires }) => {
-  const payload = crypto
-    .createHash('sha256')
-    .update('', 'utf8')
-    .digest('hex')
+  const payload = AWS.util.crypto.sha256('', 'hex');
   return v4.createPresignedURL('GET', endpoint, '/mqtt', 'iotdevicegateway', payload, {
     key: credentials.accessKeyId,
     secret: credentials.secretAccessKey,

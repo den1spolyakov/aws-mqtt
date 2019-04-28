@@ -4,7 +4,7 @@
 // sources of inspiration:
 // https://web-identity-federation-playground.s3.amazonaws.com/js/sigv4.js
 // http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html
-import crypto from 'crypto-browserify';
+import AWS from 'aws-sdk/dist/aws-sdk-react-native';
 import querystring from 'querystring-es3';
 import path from 'path-browserify';
 
@@ -240,15 +240,9 @@ function toDate(time) {
 }
 
 function hmac(key, string, encoding) {
-  return crypto
-    .createHmac("sha256", key)
-    .update(string, "utf8")
-    .digest(encoding);
+  return AWS.util.crypto.hmac(key, string, encoding);
 }
 
 function hash(string, encoding) {
-  return crypto
-    .createHash("sha256")
-    .update(string, "utf8")
-    .digest(encoding);
+  return AWS.util.crypto.sha256(string, encoding);
 }
